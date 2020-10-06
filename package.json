@@ -1,0 +1,22 @@
+{
+  "name": "storybook-adventure",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://wonieeVicky@github.com/wonieeVicky/storybook-adventure.git",
+  "author": "최혜원Vicky <fongfing@uneedcomms.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@storybook/addon-actions": "^6.0.26",
+    "@storybook/addon-essentials": "^6.0.26",
+    "@storybook/addon-links": "^6.0.26",
+    "@storybook/react": "^6.0.26",
+    "babel-loader": "^8.1.0",
+    "react-is": "^16.13.1"
+  },
+  "dependencies": {},
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  }
+}
