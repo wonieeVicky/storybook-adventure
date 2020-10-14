@@ -1,0 +1,33 @@
+import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import Bye from "./Bye";
+import { withKnobs, text, boolean } from "@storybook/addon-knobs";
+
+<Meta title="components|basic/Bye" component={Bye} decorators={[withKnobs]} />
+
+# Bye
+
+## Props
+
+이 컴포넌트에서 사용되는 Props 들을 볼까요?
+
+<Props of={Bye} />
+
+## Bye Default
+
+Bye의 기본은 이렇게 생겼어요
+
+<Preview>
+  <Story name="Default">
+    <Bye name={text("name", "stories.js")} />
+  </Story>
+</Preview>
+
+## Bye Big
+
+큰 Bye는 이렇게 생겼어요
+
+<Preview>
+  <Story name="big">
+    <Bye name={text("name", "stories.js")} big />
+  </Story>
+</Preview>
