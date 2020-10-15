@@ -10,9 +10,9 @@ export default {
   decorators: [withKnobs], // 애드온 적용
   parameters: {
     componentSubtitle: '"안녕하세요"라고 보여주는 컴포넌트',
-    docs: {
+    /* docs: {
       page: mdx,
-    },
+    }, */
   },
 };
 
