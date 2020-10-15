@@ -8,12 +8,14 @@ type ButtonProps = {
   onClick?: (e?: React.MouseEvent<HTMLButtonElement>) => void;
   /** 버튼의 생김새를 설정합니다. */
   theme: "primary" | "secondary" | "tertiary";
+  /** 버튼의 크기를 설정합니다. */
+  size: "small" | "medium" | "big";
 };
 
 /** `Button` 컴포넌트는 어떠한 작업을 트리거 할 때 사용합니다.  */
-const Button = ({ children, theme, onClick }: ButtonProps) => {
+const Button = ({ children, theme, onClick, size }: ButtonProps) => {
   return (
-    <button css={[style, themes[theme]]} onClick={onClick}>
+    <button css={[style, themes[theme], sizes[size]]} onClick={onClick}>
       {children}
     </button>
   );
@@ -21,6 +23,7 @@ const Button = ({ children, theme, onClick }: ButtonProps) => {
 
 Button.defaultProps = {
   theme: "primary",
+  size: "medium",
 };
 
 const style = css`
@@ -76,6 +79,23 @@ const themes = {
     &:active {
       background: #c3fae8;
     }
+  `,
+};
+const sizes = {
+  small: css`
+    height: 1.75rem;
+    font-size: 0.75rem;
+    padding: 0 0.875rem;
+  `,
+  medium: css`
+    height: 2.5rem;
+    font-size: 1rem;
+    padding: 0 1rem;
+  `,
+  big: css`
+    height: 3rem;
+    font-size: 1.125rem;
+    padding: 0 1.5rem;
   `,
 };
 
