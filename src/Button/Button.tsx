@@ -10,12 +10,27 @@ type ButtonProps = {
   theme: "primary" | "secondary" | "tertiary";
   /** 버튼의 크기를 설정합니다. */
   size: "small" | "medium" | "big";
+  /** 버튼을 비활성화 시킵니다. */
+  disabled?: boolean;
+  /** 버튼의 너비를 임의로 설정합니다. */
+  width?: string | number;
 };
 
 /** `Button` 컴포넌트는 어떠한 작업을 트리거 할 때 사용합니다.  */
-const Button = ({ children, theme, onClick, size }: ButtonProps) => {
+const Button = ({
+  children,
+  theme,
+  onClick,
+  size,
+  width,
+  disabled,
+}: ButtonProps) => {
   return (
-    <button css={[style, themes[theme], sizes[size]]} onClick={onClick}>
+    <button
+      css={[style, themes[theme], sizes[size], { width }]}
+      disabled={disabled}
+      onClick={onClick}
+    >
       {children}
     </button>
   );
@@ -46,6 +61,12 @@ const style = css`
   }
   &:active {
     background: #12b886;
+  }
+  &:focus {
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+  }
+  &:disabled {
+    cursor: not-allowed;
   }
 `;
 
